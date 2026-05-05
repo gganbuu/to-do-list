@@ -1,0 +1,92 @@
+Brainstorm what kind of properties your todo-items are going to have. 
+At a minimum they should have a title, description, dueDate and priority. 
+You might also want to include notes or even a checklist.
+
+Functions / Objects
+To-do-list-item
+- A single to-do-list item (i.e. Go to the gym)
+- data
+    - title
+    - description
+    - dueDate (optional)
+    - priority (optional)
+    - done?
+
+To-do-list Object
+- Contains array of to-do-list items (i.e. Daily -> go to gym, study, have lunch)
+- data
+    - array of list items
+    - category
+    - title
+    - description
+    - dueDate (optional)
+    - priority (optional)
+    - done?
+- fns
+    - create list item
+    - remove list item
+    - update list item
+
+To-Do-List-Collection, Object
+- contains an array of to-do-LISTS
+- data
+    - done?
+    - description
+    - dueDate
+    - priority (optional)
+
+
+Functions
+- CORE
+    - As a user, I want to be able to create new to-do-list items
+        - I want to be able to add a title, description, due date and priority to the to-do-list items
+    - As a user, I want to be able to create new to
+    - As a user, I want to delete to-do-list items
+    - As a user, I want to be able delete to-do-list items
+    - As a user, I want to be able to update to-do-list items
+    - As a user, I want to be able to create a new to-do-list collection 
+
+- NON-CORE
+    - As a user, I want to be able to see which items are due soon
+    - As a user, I want to see which items are high priority
+    - As a user,
+
+Plan
+1. Create core to-do-list item behaviours
+    - withID
+    - withTitle
+    - withDescription
+    - withDueDate
+    - withPriority
+    - withCompletion
+
+2. Create to-do-list List behaviours
+    - add withTitle
+    - add description
+
+    - What does a TodoList store?
+        - to-do-list stores an array of to-do-list items
+
+    - What actions can it perform?
+        - functions to manipulate
+
+3. Create to-do-list Collection
+
+
+Web Plan
+1. Create to-do-list button functionality
+    - tick and untickable
+    - text editable
+    - three dots = delete 
+
+New things to add
+- taskComplete handler
+- After checking an item, add feature to the DOM that shows the element being crossed out
+- Add a button to remove all checked items from list object (maybe top left)
+- add date button to tasks feature to tasks
+    - add date button
+    - add eventlistenener logic
+    - add event handler 
+- decrease spacing between task item text input and three dots + bin
+- save button content
+- 

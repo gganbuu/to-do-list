@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gganbu's to-do-list</title>
+  </head>
+  <body>
+    <!-- MAIN LAYOUT -->
+    <div class="d-flex" style="height: 100vh;" id="container">
+
+      <!-- SIDEBAR -->
+      <div class="bg-light p-3" style="width: 250px;">
+        <ul class="nav flex-column gap-3" id="side-nav">
+          <li class="nav-item" id="new-list">new list</li>
+          <li class="nav-item" id="lists">lists</li>
+          <li class="nav-item" id="today">today</li>
+          <li class="nav-item" id="upcoming">upcoming</li>
+          <li class="nav-item" id="anytime">anytime</li>
+        </ul>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="flex-grow-1 p-3">
+
+        <!-- NAVBAR / SEARCH -->
+        <nav class="row justify-content-center mt-3">
+          <div class="col-5">
+            <div class="input-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Search..."
+              >
+            </div>
+          </div>
+        </nav>
+
+        <!-- Page content goes here -->
+        <div class="lists-container"></div>
+      </div>
+    </div>
+  </body>
+</html>

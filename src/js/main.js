@@ -101,6 +101,15 @@ mainListsContentContainer.addEventListener("keydown", (e) => {
         document.activeElement.blur()
     }
 
+    if ((key === "Delete") && target.classList.contains("task-title")) {
+        event.preventDefault()
+        let taskId = e.target.closest(".task-container").dataset.taskId
+        let textInput = target.value
+        handleDeleteItem(myLists, listId, taskId)
+        renderDeleteItem(taskId)
+        document.activeElement.blur()
+    }
+
 
 })
 

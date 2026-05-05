@@ -14,6 +14,7 @@ export const renderAddItem = (id, item) => {
 
     const taskCheckbox = document.createElement("input")
     taskCheckbox.classList.add("form-check-input", "fs-4", "rounded-circle", "shadow-none", "m-0")
+    taskCheckbox.id = "checkbox-button"
     taskCheckbox.type = "checkbox"
     taskContainer.appendChild(taskCheckbox)
 

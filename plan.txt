@@ -89,4 +89,4 @@ New things to add
     - add event handler 
 - decrease spacing between task item text input and three dots + bin
 - save button content
-- 
+- allow elements to be deleted using the delete button on the keyboard

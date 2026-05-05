@@ -21,11 +21,14 @@ import { handleDeleteItem } from '../handlers/handleDeleteItem.js'
 import { handleUpdateListTitle } from '../handlers/handleUpdateListTitle.js'
 import { handleUpdateListDescription } from '../handlers/handleUpdateListDescription.js'
 import { handleUpdateTaskTitle } from '../handlers/handleUpdateTaskTitle.js'
+import { handleCompleteTaskToggle } from '../handlers/handleCompleteTaskToggle.js'
+
 
 //import renderers
 import { renderNewList } from '../views/renderNewList.js'
 import { renderAddItem } from '../views/renderAddItem.js'
 import { renderDeleteItem } from '../views/renderDeleteItem.js'
+
 
 
 const myLists = createToDoListCollection("My List")
@@ -51,6 +54,7 @@ sideNav.addEventListener("click", (e) => {
 mainListsContentContainer.addEventListener("click", (e) => {
     let id = e.target.id
     let listId = e.target.closest(".list-container").dataset.listId
+    let taskId 
     if (id == "add-item-button") {
         // handle new item
         let newItem = handleAddItem(myLists, listId)
@@ -59,10 +63,17 @@ mainListsContentContainer.addEventListener("click", (e) => {
     }
 
     if (id == "delete-item-button") {
-        let taskId = e.target.closest(".task-container").dataset.taskId
+        taskId = e.target.closest(".task-container").dataset.taskId
         handleDeleteItem(myLists, listId, taskId)
         renderDeleteItem(taskId)
     }
+
+    if (id == "checkbox-button") {
+        taskId = e.target.closest(".task-container").dataset.taskId
+        handleCompleteTaskToggle(myLists, listId, taskId)
+    }
+
+
 
 })
 

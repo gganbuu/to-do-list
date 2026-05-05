@@ -22,6 +22,7 @@ import { handleUpdateListTitle } from '../handlers/handleUpdateListTitle.js'
 import { handleUpdateListDescription } from '../handlers/handleUpdateListDescription.js'
 import { handleUpdateTaskTitle } from '../handlers/handleUpdateTaskTitle.js'
 import { handleCompleteTaskToggle } from '../handlers/handleCompleteTaskToggle.js'
+import { renderTaskStrikethroughToggle } from '../handlers/renderTaskStrikethroughToggle.js'
 
 
 //import renderers
@@ -71,10 +72,8 @@ mainListsContentContainer.addEventListener("click", (e) => {
     if (id == "checkbox-button") {
         taskId = e.target.closest(".task-container").dataset.taskId
         handleCompleteTaskToggle(myLists, listId, taskId)
+        renderTaskStrikethroughToggle(taskId)
     }
-
-
-
 })
 
 mainListsContentContainer.addEventListener("keydown", (e) => {

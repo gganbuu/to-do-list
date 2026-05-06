@@ -7,7 +7,7 @@ export const renderAddItem = (id, item) => {
     // create new elements and append to container with matching list id 
 
     const taskContainer = document.createElement("div")
-    taskContainer.classList.add("d-flex", "align-items-center", "gap-3", "mt-4", "ms-4", "w-50", "task-container")
+    taskContainer.classList.add("d-flex", "align-items-center", "gap-3", "mt-4", "ms-4", "w-25", "task-container")
     taskContainer.dataset.taskId = item.getID()
     const addButton = listContainer.querySelector("#add-item-button").parentElement
     listContainer.insertBefore(taskContainer, addButton)

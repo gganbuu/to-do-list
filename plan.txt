@@ -80,8 +80,6 @@ Web Plan
     - three dots = delete 
 
 New things to add
-- taskComplete handler
-- After checking an item, add feature to the DOM that shows the element being crossed out
 - Add a button to remove all checked items from list object (maybe top left)
 - add date button to tasks feature to tasks
     - add date button
@@ -89,4 +87,6 @@ New things to add
     - add event handler 
 - decrease spacing between task item text input and three dots + bin
 - save button content
-- allow elements to be deleted using the delete button on the keyboard
+- allow elements to be deleted using the delete button on the keyboard (D)
+- fix handle add task item and handle delete item naming conventions
+- make buttons look clickable, with cursor showing click pointer rather writing pointer

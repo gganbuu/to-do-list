@@ -1,4 +1,6 @@
 export const renderTaskStrikethroughToggle = (taskId) => {
-    const listContainer = document.querySelector(`[data-task-id="${taskId}"]`)
-    listContainer.classList.toggle("text-decoration-line-through")
+    // select taskContainer 
+    const taskContainer = document.querySelector(`[data-task-id="${taskId}"]`)
+    const taskTitle = taskContainer.querySelector('.task-title')
+    taskTitle.classList.toggle("text-decoration-line-through")
 }

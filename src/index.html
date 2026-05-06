@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>gganbu's to-do-list</title>
   </head>
-  <body>
+  <body class="bg-light">
     <!-- MAIN LAYOUT -->
     <div class="d-flex" style="height: 100vh;" id="container">
 
       <!-- SIDEBAR -->
-      <div class="bg-light p-3" style="width: 250px;">
+      <div class="bg-secondary p-3" style="width: 250px;">
         <ul class="nav flex-column gap-3" id="side-nav">
+          <li class="nav-item" id="tto do"> to do list</li>
           <li class="nav-item" id="new-list">new list</li>
           <li class="nav-item" id="lists">lists</li>
           <li class="nav-item" id="today">today</li>
@@ -21,19 +22,11 @@
       </div>
 
       <!-- MAIN CONTENT -->
-      <div class="flex-grow-1 p-3">
+      <div class="flex-grow-1">
 
-        <!-- NAVBAR / SEARCH -->
-        <nav class="row justify-content-center mt-3">
-          <div class="col-5">
-            <div class="input-group">
-              <input 
-                type="text" 
-                class="form-control" 
-                placeholder="Search..."
-              >
-            </div>
-          </div>
+        <!-- NAVBAR -->
+        <nav class="d-flex bg-secondary p-2">
+          <i class="bi bi-trash-fill text-light"></i>
         </nav>
 
         <!-- Page content goes here -->

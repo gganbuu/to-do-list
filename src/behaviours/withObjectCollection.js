@@ -9,6 +9,7 @@ export const withObjectCollection = () => (obj) => {
         addItem: (item) => _list.push(item),
         deleteIndex: (index) => _list.splice(index, 1),
         getLength: () => _list.length,
-        findID: (id) => [..._list].find((element) => element.getID() == id)
+        findID: (id) => [..._list].find((element) => element.getID() == id),
+        clearCompleted: () => _list = [..._list].filter((element) => element.getCompletion() == false)
     };
 };

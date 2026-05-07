@@ -81,6 +81,8 @@ Web Plan
 
 New things to add
 - Add a button to remove all checked items from list object (maybe top left)
+    - //need a thing to render add item for render delete all checked to work 
+
 - add date button to tasks feature to tasks
     - add date button
     - add eventlistenener logic
@@ -90,3 +92,7 @@ New things to add
 - allow elements to be deleted using the delete button on the keyboard (D)
 - fix handle add task item and handle delete item naming conventions
 - make buttons look clickable, with cursor showing click pointer rather writing pointer
+- convert all layout to components
+- if user clicks out of the component, let it save state of form 
+
+

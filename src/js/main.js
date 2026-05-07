@@ -22,19 +22,33 @@ import { handleUpdateListTitle } from '../handlers/handleUpdateListTitle.js'
 import { handleUpdateListDescription } from '../handlers/handleUpdateListDescription.js'
 import { handleUpdateTaskTitle } from '../handlers/handleUpdateTaskTitle.js'
 import { handleCompleteTaskToggle } from '../handlers/handleCompleteTaskToggle.js'
-import { renderTaskStrikethroughToggle } from '../handlers/renderTaskStrikethroughToggle.js'
-
+import { handleDeleteAllChecked } from '../handlers/handleDeleteAllChecked.js'
 
 //import renderers
 import { renderNewList } from '../views/renderNewList.js'
 import { renderAddItem } from '../views/renderAddItem.js'
 import { renderDeleteItem } from '../views/renderDeleteItem.js'
-
+import { renderTaskStrikethroughToggle } from '../handlers/renderTaskStrikethroughToggle.js'
+import { renderDeleteAllChecked } from '../views/renderDeleteAllChecked.js'
 
 
 const myLists = createToDoListCollection("My List")
 const mainListsContentContainer = document.querySelector(".lists-container")
 mainListsContentContainer.dataset.id = myLists.getID()
+
+const toolBar = document.querySelector(".tool-bar")
+toolBar.addEventListener("click", (e) => {
+    let target = e.target
+    let id = target.id
+
+    if (id == "delete-all-checked") {
+        //handle delete all checked
+        // handleDeleteAllChecked(myLists)
+
+        //render delete all checke  d
+        // renderDeleteAllChecked(myLists, mainListsContentContainer)
+    }
+})
 
 // side nav event listener
 const sideNav = document.querySelector("#side-nav")
@@ -46,7 +60,7 @@ sideNav.addEventListener("click", (e) => {
         // add list to myLists
         myLists.addItem(newList)
         // render new list on DOM
-        renderNewList(newList.getTitle(), newList.getDescription(), newList.getID(), mainListsContentContainer)
+        renderNewList(newList, mainListsContentContainer)
     }
 })
 
@@ -119,9 +133,9 @@ mainListsContentContainer.addEventListener("keydown", (e) => {
         renderDeleteItem(taskId)
         document.activeElement.blur()
     }
-
-
 })
+
+
 
 
 

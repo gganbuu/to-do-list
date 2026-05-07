@@ -1,6 +1,6 @@
 import { createTaskComponent } from "../components/createTaskComponent.js"
 
-export const renderAddItem = (listId, item) => {
+export const renderAddTask = (listId, item) => {
     // select all listcontainers, then filter to get the listcontainer 
     // that matches the id
     let listContainers = document.querySelectorAll(".list-container")

@@ -1,4 +1,4 @@
-import { renderAddItem } from "./renderAddItem.js"
+import { renderAddItem } from "./renderAddTask.js"
 import { createListComponent } from "../components/createListComponent.js"
 
 export const renderNewList = (list, mainListsContentContainer) => {

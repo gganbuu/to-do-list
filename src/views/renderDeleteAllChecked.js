@@ -13,7 +13,11 @@ export const renderDeleteAllChecked = (myLists, mainListsContentContainer) => {
     // delete list DOM elements on screen
     listsNode.forEach(element => element.remove());
 
-    // regenerate dom with all lists that were on screen
+    // regenerate dom with all lists that were on screen:
+    // 1. loop through listIds array
+    // 2. get list element
+    // 3. store returned list component in list container
+    // 4. append list container to main list
     listIdsArray.forEach((element) => {
         let list = myLists.findID(element)
         const listContainer = createListComponent(list)

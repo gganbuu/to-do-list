@@ -16,14 +16,24 @@ export const createTaskComponent = (item) => {
     taskTitle.placeholder = item.getTitle()
     taskContainer.appendChild(taskTitle)
 
+    const buttonContainer = document.createElement("div")
+    buttonContainer.classList.add("d-flex", "align-items-center", "gap-2")
+
+    const calendarButton = document.createElement("i")
+    calendarButton.classList.add("bi", "bi-calendar")
+    buttonContainer.appendChild(calendarButton)
+
     const binButton = document.createElement("i")
-    binButton.classList.add("bi", "bi-trash3", "d-none", "hidden-content")
+    binButton.classList.add("bi", "bi-trash3")
     binButton.id = "delete-item-button"
-    taskContainer.appendChild(binButton)
+    buttonContainer.appendChild(binButton)
 
     const threeDotsButton = document.createElement("i")
-    threeDotsButton.classList.add("fa-solid", "fa-ellipsis", "d-none", "hidden-content")
-    taskContainer.appendChild(threeDotsButton)
+    threeDotsButton.classList.add("fa-solid", "fa-ellipsis")
+    buttonContainer.appendChild(threeDotsButton)
+
+
+    taskContainer.append(buttonContainer)
 
     return taskContainer
 

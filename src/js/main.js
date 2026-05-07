@@ -26,7 +26,7 @@ import { handleDeleteAllChecked } from '../handlers/handleDeleteAllChecked.js'
 
 //import renderers
 import { renderNewList } from '../views/renderNewList.js'
-import { renderAddItem } from '../views/renderAddItem.js'
+import { renderAddTask } from '../views/renderAddTask.js'
 import { renderDeleteItem } from '../views/renderDeleteItem.js'
 import { renderTaskStrikethroughToggle } from '../handlers/renderTaskStrikethroughToggle.js'
 import { renderDeleteAllChecked } from '../views/renderDeleteAllChecked.js'
@@ -45,7 +45,7 @@ toolBar.addEventListener("click", (e) => {
         // handle delete all checked
         handleDeleteAllChecked(myLists)
 
-        //render delete all checke d
+        //render delete all checked
         renderDeleteAllChecked(myLists, mainListsContentContainer)
     }
 })
@@ -74,7 +74,7 @@ mainListsContentContainer.addEventListener("click", (e) => {
         // handle new item
         let newItem = handleAddItem(myLists, listId)
         // render new item
-        renderAddItem(listId, newItem)
+        renderAddTask(listId, newItem)
     }
 
     if (id == "delete-item-button") {
@@ -87,6 +87,11 @@ mainListsContentContainer.addEventListener("click", (e) => {
         taskId = e.target.closest(".task-container").dataset.taskId
         handleCompleteTaskToggle(myLists, listId, taskId)
         renderTaskStrikethroughToggle(taskId)
+    }
+
+    if (id == "date-button") {
+        taskId = e.target.closest(".task-container").dataset.taskId
+        handleAddDateButton(myLists, listId, taskId)
     }
 })
 

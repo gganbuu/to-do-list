@@ -82,6 +82,7 @@ Web Plan
 New things to add
 - Add a button to remove all checked items from list object (maybe top left)
     - //need a thing to render add item for render delete all checked to work 
+    - Lets put a hold on this feature for now
 
 - add date button to tasks feature to tasks
     - add date button

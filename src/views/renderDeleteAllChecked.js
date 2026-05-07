@@ -1,5 +1,5 @@
 import { renderNewList } from "./renderNewList.js"
-
+import { createListComponent } from "../components/createListComponent.js"
 export const renderDeleteAllChecked = (myLists, mainListsContentContainer) => {
     // this function will re-render all the objects on page
     // so that the removed lists will show up on the dom
@@ -14,8 +14,9 @@ export const renderDeleteAllChecked = (myLists, mainListsContentContainer) => {
     listsNode.forEach(element => element.remove());
 
     // regenerate dom with all lists that were on screen
-    // listIdsArray.forEach((element) => {
-    //     let list = myLists.findID(element)
-    //     renderNewList(list, mainListsContentContainer)
-    // })
+    listIdsArray.forEach((element) => {
+        let list = myLists.findID(element)
+        const listContainer = createListComponent(list)
+        mainListsContentContainer.append(listContainer)
+    })
 }

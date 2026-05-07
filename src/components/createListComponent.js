@@ -1,3 +1,5 @@
+import { createTaskComponent } from "./createTaskComponent.js"
+
 export const createListComponent = (listObject) => {
     const listContainer = document.createElement("div")
     listContainer.classList.add("d-flex", "flex-column", "mt-4", "p-4", "list-container")
@@ -17,6 +19,7 @@ export const createListComponent = (listObject) => {
     listDescription.placeholder = listObject.getDescription()
     listContainer.appendChild(listDescription)
 
+    //add list button
     const addListItemButton = document.createElement("div")
     addListItemButton.classList.add("d-flex", "align-items-center", "mt-4", "ms-4", "w-50", "gap-3")
     const plusSymbol = document.createElement("i")
@@ -25,6 +28,16 @@ export const createListComponent = (listObject) => {
     plusSymbol.ariaHidden = "true"
     addListItemButton.appendChild(plusSymbol)
     listContainer.appendChild(addListItemButton)
+
+    //check if list has tasks
+    if (listObject.getLength() > 0) {
+        const listArray = listObject.getList()
+        listArray.forEach(task => {
+            const taskContainer = createTaskComponent(task)
+            const addButton = listContainer.querySelector("#add-item-button").parentElement
+            listContainer.insertBefore(taskContainer, addButton)
+        })
+    }
     
     return listContainer
 }

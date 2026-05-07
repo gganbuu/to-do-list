@@ -4,7 +4,7 @@ import { createListComponent } from "../components/createListComponent.js"
 export const renderNewList = (list, mainListsContentContainer) => {
     //create listcontainer 
     const listContainer = createListComponent(list)
-
+    
     //add tasks to list container
     mainListsContentContainer.appendChild(listContainer)
 } 

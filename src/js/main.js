@@ -42,11 +42,11 @@ toolBar.addEventListener("click", (e) => {
     let id = target.id
 
     if (id == "delete-all-checked") {
-        //handle delete all checked
-        // handleDeleteAllChecked(myLists)
+        // handle delete all checked
+        handleDeleteAllChecked(myLists)
 
-        //render delete all checke  d
-        // renderDeleteAllChecked(myLists, mainListsContentContainer)
+        //render delete all checke d
+        renderDeleteAllChecked(myLists, mainListsContentContainer)
     }
 })
 

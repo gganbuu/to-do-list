@@ -14,6 +14,9 @@ import { createToDoListItem } from '../models/to-do-list-item.js'
 import { createToDoList } from '../models/to-do-list.js'
 import { createToDoListCollection } from '../models/to-do-list-collection.js'
 
+//import components
+import { createCalendarModalComponent } from '../components/createCalendarModalComponent.js'
+
 //import handlers
 import { handleNewList } from '../handlers/handleNewList.js'
 import { handleAddItem } from '../handlers/handleAddItem.js'
@@ -23,6 +26,7 @@ import { handleUpdateListDescription } from '../handlers/handleUpdateListDescrip
 import { handleUpdateTaskTitle } from '../handlers/handleUpdateTaskTitle.js'
 import { handleCompleteTaskToggle } from '../handlers/handleCompleteTaskToggle.js'
 import { handleDeleteAllChecked } from '../handlers/handleDeleteAllChecked.js'
+import { handleAddDate } from '../handlers/handleAddDate.js'
 
 //import renderers
 import { renderNewList } from '../views/renderNewList.js'
@@ -91,7 +95,24 @@ mainListsContentContainer.addEventListener("click", (e) => {
 
     if (id == "date-button") {
         taskId = e.target.closest(".task-container").dataset.taskId
-        handleAddDateButton(myLists, listId, taskId)
+        const calendarModalElement = createCalendarModalComponent()
+        document.body.appendChild(calendarModalElement)
+        
+        const calendarModal = new bootstrap.Modal(calendarModalElement)
+        calendarModal.show()
+
+        calendarModalElement.querySelector("#saveDateButton").addEventListener("click", () => {
+            const selectedDate = calendarModalElement.querySelector("#dateInput").value
+            if (selectedDate) {
+                handleAddDate(myLists, listId, taskId, selectedDate)
+                calendarModal.hide()
+            }
+        }, { once: true })
+
+        // cleanup modal from DOM after it's hidden
+        calendarModalElement.addEventListener("hidden.bs.modal", () => {
+            calendarModalElement.remove()
+        }, { once: true })
     }
 })
 

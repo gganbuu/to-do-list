@@ -21,6 +21,7 @@ export const createTaskComponent = (item) => {
 
     const calendarButton = document.createElement("i")
     calendarButton.classList.add("bi", "bi-calendar")
+    calendarButton.id = "date-button"
     buttonContainer.appendChild(calendarButton)
 
     const binButton = document.createElement("i")
